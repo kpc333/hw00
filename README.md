@@ -2,7 +2,7 @@
 
 This non-graded assignment is used just to get students linked into the CSC232 GitHub Classroom managed by Jim Daehn.
 
-_As suggested in the previous sentence, this is a non-graded assignment. Whether you choose to work on this or not is your perrogative. The end-goal of this assignment is to simply link you to my GitHub classroom. This will happen simply by virtue of you following the assignment link provided to you by your instructor._
+_As suggested in the previous sentence, this is a non-graded assignment. Whether you choose to work on this or not is your perrogative. The ultimate of this assignment is to simply link you to my GitHub classroom. This will happen by virtue of you simply following the assignment link provided to you by your instructor._
 
 ## Goals
 
@@ -83,7 +83,7 @@ Unpacking objects: 100% (5/5), done.
 $ cd hw00-your-github-username
 ```
 
-Again, in the above commands, one does not type the `$`. Any lines shown without the leading `$` are output from one of the commands. Also, when executing the `git` command, you may be prompted to (minimally) log in to GitHub as shown here:
+Note: in the commands shown above, one does not type the `$` as it merely represents your command-line prompt. Any lines shown without the leading `$` are output from one of the commands. Also, when executing the `git` command, you may be prompted to (minimally) log in to GitHub as shown here:
 
 ![GitHub Login Window](github-login.png)
 
@@ -91,7 +91,7 @@ Also, if you've set up two-factor authentication (something you should do with a
 
 ![Multifactor Authentication](two-factor-auth.png)
 
-When you're all said and done, you'll be in the csc232/hw/hw00-your-github-username directory. This cloned directory is what will be referred to as your "working directory."
+When you're all said and done, you'll be in the `csc232/hw/hw00-your-github-username directory`. This cloned directory is what will be referred to as your "working directory."
 
 ### Creating a develop branch
 
@@ -118,7 +118,7 @@ $
 
 In the above, we see three new `git` commands:
 
-1. `git status` will tell you what branch your on and whether or not there are changes to be committed.
+1. `git status` will tell you what branch you're on and whether or not there are changes to be committed.
 1. `git checkout -b` is actually two commands in one: the `checkout` portion is how you switch to a different branch; the `-b` switch is used to create the branch first. If you already have the branch, we do this command with out the `-b` to switch to the desired branch.
 1. `git branch` shows the branches that currently exist in your local repository. The one with the leading `*` is the branch that is currently checked out.
 
@@ -154,7 +154,7 @@ $
 Note:
 
 * the "commit hash" (`7333fbb`) is unique to this example; it'll most likely be different on your machine.
-* The `-am` switches on the `git commit` command serve two purposes: the `a` part serves to "stage" this file for commits and the `m` portion serves to indicate a commit message that must accompany every commit. If you leave off the `m` portion, you'll find yourself in a weird editor (named `vi`) whose usage is beyond the scope of this assignment.
+* The `-am` switches on the `git commit` command serve two purposes: the `a` part serves to "stage" this file for commits and the `m` portion serves to indicate a commit message that must accompany every commit. If you leave off the `m` portion, you'll find yourself in a weird editor (named `vi`) whose usage is beyond the scope of this assignment. For those that are interested, [here](https://www.openvim.com/) is a fun, interactive tutorial on vi. I highly recommend learning to use vi as it a rather ubiquitous editor used in any linux-based system.
 
 ### Adding New Files Under Revision Control and Commiting Changes
 
@@ -169,7 +169,7 @@ The above command will launch Notepad. You may be prompted to "bind" `bio.md`; j
 
 The `md` extention on this file suggests it is in the Markdown format. You don't have to style the file using Markdown (you can just write plain text for now), but you are encourage to learn the Markdown syntax as this is the "standard" format for README files (and other documentation hosted in version control systems like GitHub, BitBucket and the like). Here's a [cheat sheet](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf) specific to GitHub that may be used to help with the Markdown syntax.
 
-What should be written? Your instructor would like to know more about you; what's your background, what's your major, why did you pick your major etc. Your instructor also likes to be humored, so tell him something funny. None of this has to be real; it's up to you as to what you want to say here. You could also tell him things you like (music, football, etc.). It is rumored that he gives bonus points for anything positive said about the Buffalo Bills. This can be as long (or as short) as you desire; it could be as close or as far as possible from reality. The content is not important; it's the skill of adding a new file to your repository.
+What should be written? Your instructor would like to know more about you; what's your background, what's your major, why did you pick your major etc. Your instructor also likes to be humored, so tell him something funny. _None of this has to be real_; it's up to you as to what you want to say here. You could also tell him things you like (music, football, etc.). It is rumored that he gives bonus points for anything positive said about the Buffalo Bills. This can be as long (or as short) as you desire; it could be as close or as far as possible from reality. The content is not important; it's more about gaining the skill of adding a new file to your repository.
 
 When you're all done, _save_ your changes, _add_ and _commit_ them under revision control:
 
@@ -179,6 +179,8 @@ $ git commit -m "Initial import of bio."
 ... some output regarding changes and modes created
 $
 ```
+
+(Notice here we did not use the combined switch `-am`. Instead we manually staged, i.e. added and thus removed the need for the `a` in `-am`, the file and then just used `-m` to provide a log message for the commit.)
 
 ### Pushing Your Work to GitHub
 
@@ -204,7 +206,7 @@ Branch 'develop' set up to track remote branch 'develop' from 'origin'.
 $
 ```
 
-Any subsequent push does not require the `--set-upstream` switch (and in fact, it shouldn't be used once it's been used once already). That is, all subsequent pushes merely require that you type `git push` at the command line.
+Any subsequent push does not require the `--set-upstream` switch (and in fact, it shouldn't be used once it's been used once already). That is, all subsequent pushes merely require that you type `git push` at the command line. Alternatively, a shorter option for that first commit which accomplishes the same thing is to use `git push -u origin develop`.
 
 ### Creating a Pull Request
 
@@ -223,7 +225,7 @@ Tap on the New Pull Request button and make sure you are comparing your `develop
 
 ![Compare Branches](compare-branches.png)
 
-Note the direction of the arrow: _from_ `develop` _into_ `master`. Tap on the Pull Request button and fill in a brief description. Also, add professordaehn as a reviewer and assign yourself the Assignee. Once you've added in all these details, tap on the Create Pull Request button.
+Note the direction of the arrow: _from_ `develop` _into_ `master`. Tap on the Pull Request button and fill in a brief description. Also, add `professordaehn` as a reviewer and assign yourself the Assignee. Once you've added in all these details, tap on the Create Pull Request button.
 
 Once you've done this, _do not merge_ until your instructor as approved the pull request.
 
@@ -242,4 +244,4 @@ To complete this assignment, one must:
 
 ## Issues
 
-If you have found any issues with this lab, e.g., the output of a command didn't match yours, or you have found typos, or one or more sections are worded in a manner that seems confusing or misleading, please bring it to my attention. The best way to do that is to "raise an Issue." Visit [https://github.com/msu-csc232-fa19/hw00/issues](https://github.com/msu-csc232-fa19/hw00/issues) and tap on the "New Issue" button.
+If you have found any issues with this lab, e.g., the output of a command didn't match yours, or you have found typos, or one or more sections are worded in a manner that seems confusing or misleading, please bring it to my attention. The best way to do that is to "raise an Issue." Visit [https://github.com/msu-csc232-sp20/hw00/issues](https://github.com/msu-csc232-sp20/hw00/issues) and tap on the "New Issue" button.
